@@ -1,0 +1,76 @@
+<html>
+ <head>
+  <title>canvas</title>
+  <meta charset="utf-8">
+
+  <canvas id="smile" width="320" height="420">
+    <p>Ваш браузер не поддерживает рисование.</p>
+  </canvas>
+
+<script type="text/javascript">
+    var myCanvas = document.getElementById('smile');
+     var ctx = myCanvas.getContext('2d');
+     // Рисуем окружность 
+     ctx.strokeStyle = "#000";
+     ctx.fillStyle = "#fc0";
+     ctx.beginPath();
+     ctx.arc(100,100,50,0,Math.PI*2,true);
+     ctx.closePath();
+     ctx.stroke();
+     ctx.fill();
+     // Рисуем левый глаз 
+     ctx.fillStyle = "#fff";
+     ctx.beginPath();
+     ctx.arc(84,90,8,0,Math.PI*2,true);
+     ctx.closePath();
+     ctx.stroke();
+     ctx.fill();
+     // Рисуем правый глаз 
+     ctx.fillStyle="violet";
+     ctx.beginPath();
+     ctx.arc(116,90,8,0,Math.PI*2,true);
+     ctx.closePath();
+     ctx.stroke();
+     ctx.fill();
+     // Рисуем рот
+     ctx.beginPath();
+     ctx.fillStyle = "#fff";
+     ctx.moveTo(70,115);
+     ctx.quadraticCurveTo(100,130,130,115);
+     ctx.quadraticCurveTo(100,150,70,115); 
+     ctx.closePath();
+     ctx.stroke();
+     ctx.fill();
+    // Рисуем прямоугольник
+ 	ctx.fillStyle="#FF0000";
+	ctx.fillRect(50,160,105,65);
+   // Рисуем еще прямоугольник
+	ctx.lineWidth = 4; 
+ 	ctx.strokeStyle = 'green';
+	ctx.strokeRect(50,230,105,15);
+   // Рисуем шапку 
+	ctx.strokeStyle = 'blue';
+	ctx.moveTo(70,60);
+	ctx.lineTo(120,10);
+	ctx.lineTo(130,60);
+	ctx.stroke();
+   
+  // Рисуем овал как сжатый круг
+      ctx.scale(2, 1); // сжимаем по вертикали в 2 раза
+      ctx.beginPath();
+      var centerX = 55;
+      var centerY = 300;
+      var radius = 50;
+      ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+      ctx.resetTransform();
+      ctx.closePath();
+      // красим
+      ctx.fillStyle = '#8ED6FF';
+      ctx.fill();
+      ctx.lineWidth = 5;
+      ctx.strokeStyle = 'black';
+      ctx.stroke();
+  </script>
+ </head>
+ <body>
+</html>
