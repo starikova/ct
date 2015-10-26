@@ -1,76 +1,104 @@
+<!DOCTYPE HTML>
 <html>
- <head>
-  <title>canvas</title>
-  <meta charset="utf-8">
 
-  <canvas id="smile" width="320" height="420">
-    <p>Ваш браузер не поддерживает рисование.</p>
-  </canvas>
+<body>
 
-<script type="text/javascript">
-    var myCanvas = document.getElementById('smile');
-     var ctx = myCanvas.getContext('2d');
-     // Рисуем окружность 
-     ctx.strokeStyle = "#000";
-     ctx.fillStyle = "#fc0";
-     ctx.beginPath();
-     ctx.arc(100,100,50,0,Math.PI*2,true);
-     ctx.closePath();
-     ctx.stroke();
-     ctx.fill();
-     // Рисуем левый глаз 
-     ctx.fillStyle = "#fff";
-     ctx.beginPath();
-     ctx.arc(84,90,8,0,Math.PI*2,true);
-     ctx.closePath();
-     ctx.stroke();
-     ctx.fill();
-     // Рисуем правый глаз 
-     ctx.fillStyle="violet";
-     ctx.beginPath();
-     ctx.arc(116,90,8,0,Math.PI*2,true);
-     ctx.closePath();
-     ctx.stroke();
-     ctx.fill();
-     // Рисуем рот
-     ctx.beginPath();
-     ctx.fillStyle = "#fff";
-     ctx.moveTo(70,115);
-     ctx.quadraticCurveTo(100,130,130,115);
-     ctx.quadraticCurveTo(100,150,70,115); 
-     ctx.closePath();
-     ctx.stroke();
-     ctx.fill();
-    // Рисуем прямоугольник
- 	ctx.fillStyle="#FF0000";
-	ctx.fillRect(50,160,105,65);
-   // Рисуем еще прямоугольник
-	ctx.lineWidth = 4; 
- 	ctx.strokeStyle = 'green';
-	ctx.strokeRect(50,230,105,15);
-   // Рисуем шапку 
-	ctx.strokeStyle = 'blue';
-	ctx.moveTo(70,60);
-	ctx.lineTo(120,10);
-	ctx.lineTo(130,60);
-	ctx.stroke();
-   
-  // Рисуем овал как сжатый круг
-      ctx.scale(2, 1); // сжимаем по вертикали в 2 раза
-      ctx.beginPath();
-      var centerX = 55;
-      var centerY = 300;
-      var radius = 50;
-      ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-      ctx.resetTransform();
-      ctx.closePath();
-      // красим
-      ctx.fillStyle = '#8ED6FF';
-      ctx.fill();
-      ctx.lineWidth = 5;
-      ctx.strokeStyle = 'black';
-      ctx.stroke();
-  </script>
- </head>
- <body>
+
+</body>
 </html>
+
+<script>
+
+var area = document.createElement('div');
+document.body.appendChild( area );
+area.style.height = "260px";
+area.style.backgroundColor = "yellow";
+area.style.position = "relative";
+area.id = "area";
+
+
+var td11 = document.createElement('input');
+area.appendChild( td11 );
+td11.style.position = "absolute";
+td11.style.left = "0px";
+td11.style.top = "0px";
+td11.style.width = "60px";
+td11.style.height = "60px";
+td11.style.fontSize = "36px";
+td11.value = "0";
+td11.textAlign = "center";
+td11.textJustify = "center";
+td11.id = "td11";
+
+var td12 = td11.cloneNode(false);
+area.appendChild( td12 );
+td12.style.left = "70px";
+td12.id = "td12";
+
+var td21 = td11.cloneNode(false);
+area.appendChild( td21 );
+td21.style.left = "0px";
+td21.style.top = "70px";
+td21.id = "td21";
+
+var td22 = td11.cloneNode(false);
+area.appendChild( td22 );
+td22.style.left = "70px";
+td22.style.top = "70px";
+td22.id = "td22";
+
+var button = td11.cloneNode(false);
+area.appendChild( button );
+button.type = "button";
+button.value = "Вычислить";
+button.style.left = "0px";
+button.style.top = "140px";
+button.style.width = "210px";
+//button.onclick = det;
+
+//button.onclick = function() {
+		//alert("Светит солнце!")
+   //};
+
+ //  Можно использовать любые события для обработчика
+ //  с помощью addEventListener (без on маленькими буквами):
+button.addEventListener( "click", det );
+   
+var span = document.createElement('span');
+area.appendChild( span );
+span.style.position = "absolute";
+span.style.left = "50px";
+span.style.top = "210px";
+span.style.width = "60px";
+span.style.height = "60px";
+span.style.fontSize = "36px";
+span.innerHTML = "Ответ";
+span.id = "answer";
+
+ // ИЛИ
+area.getElementsByTagName("input")[0].value = "3";
+
+
+area.getElementsByTagName("input")[1].value = "4";
+area.getElementsByTagName("input")[2].value = "5";
+area.getElementsByTagName("input")[3].value = "6";
+
+area.getElementsByTagName("input")[4].value =   
+                                              "Найти";
+
+function det() {
+var a11, a12, a21, a22, opr;
+a11 = parseInt( document.getElementById("td11").value );
+a12 = parseInt( document.getElementById("td12").value );
+a21 = parseInt( document.getElementById("td21").value );
+a22 = parseInt( document.getElementById("td22").value );
+
+opr = a11 * a22 - a12 * a21;
+//alert( opr );
+document.getElementById("answer").innerHTML = 
+String( opr );
+
+
+}
+
+</script>
