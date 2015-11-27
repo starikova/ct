@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+     <style>
+.td {
+width: 80px;
+height: 60px;
+font-size: 40px;
+text-align: center;
+position: absolute;
+}
+#area {
+position: relative;
+height: 350px;
+width:500px;
+background-color: green;
+}
+#answer {
+font-size: 50 px;
+color: red;
+}
+#hhead{
+font-size: 45 px;
+color: red; 
+text-align: center;
+}
+</style>
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Comp.-tech. by Nezhdana</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/Nezhdana/Comp.-tech.">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Comp.-tech.</h1>
+            <h2></h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/Nezhdana/Comp.-tech./zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/Nezhdana/Comp.-tech./tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to the laboratory work number 1 by Kankasova NS!</h3>
+
+<p id="area">
+  
+   <span style="position: absolute; font-family: Arial; top:45px; left:90px;" id = "hhead"> Вычисление силы упругости по закону Гука </span>	
+  
+   <input placeholder='Введите коэфф. проп.' id = 'td1' style="position: absolute; font-family: Arial; top:75px; left:90px; width: 340px">
+
+   <input placeholder='Введите величину деформации' id = 'td2' style="position: absolute; font-family: Arial; top:105px; left:90px; width: 340px">
+
+<input type="button" 
+          value="Вычислить" onclick="Fupr()" style="position: absolute; top: 170px; left: 90px; width: 150px; height: 50px;">
+<span style="position: absolute; top:175px; left:260px; " id = "answer"> Ответ </span>	
+  
+</p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/Nezhdana">Nezhdana</a> can be found on <a href="https://github.com/Nezhdana/Comp.-tech.">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
+<script>
+function Fupr() {
+var k, x, f;
+k = parseInt( document.getElementById("td1").value );
+x = parseInt( document.getElementById("td2").value );
+f = k*x;
+document.getElementById("answer").innerHTML = String(f);
+}
+</script>
