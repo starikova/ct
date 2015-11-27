@@ -1,56 +1,56 @@
+<!DOCTYPE HTML>
 <html>
 <head>
-<title>Лаб.работа№1(а)</title>
-</head>
-<body>
-<div id="main">
-<div id="letter1">Введите высоту трапеции <input type="text" id="box1"></div>
-<div id="letter2">Введите основание №1 <input type="text" id="box2"></div>
-<div id="letter3">Введите основание №2 <input type="text" id="box3"></div>
-<input type="Button" class="Compilate" value="Вычислить" onclick="trap">
-<span id="answer">Ответ</span>
-</div>
-
 <style>
-#main{
-width:370px;
-height:300px;
-position:relative;
-background:rgb(229, 229, 212);
+.td {
+width: 60px;
+height: 60px;
+font-size: 36px;
+text-align: center;
+position: absolute;
 }
-#box1,#box2,#box3{
-width:50px;
-position:absolute;
-margin-left:30px;
+#area {
+position: relative;
+height: 260px;
+background-color: blue;
 }
-.Compilate{
-margin-left:130px;
-position:absolute;
-}
-#box1{
-margin-left:13px;
-}
-#letter1, #letter2, #letter3{
-padding:10px;
-margin-top:10px;
-}
-#answer{
-position:absolute;
-margin-left:150px;
-margin-top:40px;
+
+#answer {
+font-size: 36px;
+color: violet;
 }
 </style>
-<script>
-function trap(){
-var a,b,h,S;
-a=parsetInt(document.getElementById("box1").value;
-b=parsetInt(document.getElementById("box2").value;
-h=parsetInt(document.getElementById("box3").value;
-S=1/2*h*(a+b);
-document.getElementById("answer").innerHTML=string(S);
-}
-</script>
+</head>
+
+<body>
+
+<div id="area">
+
+<input <textarea placeholder="вектор1"id="td11" style="top:0px; left:0px;">
+<input <textarea placeholder="вектор2" id="td12"style="top:0px; left:180px;">
+<input <textarea placeholder="вектор3" id="td21"style="top:0px; left:360px;">
 
 
+<input type="button" 
+          value="Вычислить" onclick="det()" style="position: absolute; top:140px; left: 50px; width: 120px; height: 30px;">
+<span style="position: absolute; top:180px; left:50px;" id = "answer"> Ответ </span>	
+<span style="position: absolute; top:50px; left:0px;" id = "answer"> Введите высоту трапеции</span>
+<span style="position: absolute; top:50px; left:180px;" id = "answer"> Введите основание №1</span>
+<span style="position: absolute; top:50px; left:360px;" id = "answer"> Введите основание №2</span>
+</div>
 </body>
 </html>
+
+<script>
+function det() {
+var a11, a12, a21,  opr;
+a11 = parseInt( document.getElementById("td11").value );
+a12 = parseInt( document.getElementById("td12").value );
+a21 = parseInt( document.getElementById("td21").value );
+
+opr = 1/2*a12*(a11+a21);
+//alert( opr );
+document.getElementById("answer").innerHTML = 
+String( opr );
+}
+</script>
