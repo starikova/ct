@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+.td {
+width: 60px;
+height: 60px;
+font-size: 36px;
+text-align: center;
+position: absolute;
+}
+#area {
+position: relative;
+height: 260px;
+background-color: blue;
+}
+
+#answer {
+font-size: 36px;
+color: violet;
+}
+</style>
+</head>
+
+<body>
+
+<div id="area">
+
+<input <textarea placeholder="вектор1"id="td11" style="top:0px; left:0px;">
+<input <textarea placeholder="вектор2" id="td12"style="top:0px; left:180px;">
+<input <textarea placeholder="вектор3" id="td21"style="top:0px; left:360px;">
+
+
+<input type="button" 
+          value="Вычислить" onclick="det()" style="position: absolute; top:140px; left: 50px; width: 120px; height: 30px;">
+<span style="position: absolute; top:180px; left:50px;" id = "answer"> Ответ </span>	
+<span style="position: absolute; top:50px; left:0px;" id = "answer"> вектор 1</span>
+<span style="position: absolute; top:50px; left:180px;" id = "answer"> вектор 2</span>
+<span style="position: absolute; top:50px; left:360px;" id = "answer"> вектор 3</span>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+
+<script>
+function det() {
+var a11, a12, a21,  opr;
+a11 = parseInt( document.getElementById("td11").value );
+a12 = parseInt( document.getElementById("td12").value );
+a21 = parseInt( document.getElementById("td21").value );
+
+
+opr = Math.sqrt((a11*a11)+ (a12*a12) + (a21*a21))  ;
+//alert( opr );
+document.getElementById("answer").innerHTML = 
+String( opr );
+
+
+}
+
+</script>
+
+
+
