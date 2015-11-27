@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Лаб.работа№1(а)</title>
+</head>
+<body>
+<div id="main">
+<div id="letter1">Введите высоту трапеции <input type="text" id="box1"></div>
+<div id="letter2">Введите основание №1 <input type="text" id="box2"></div>
+<div id="letter3">Введите основание №2 <input type="text" id="box3"></div>
+<input type="Button" class="Compilate" value="Вычислить" onclick="trap">
+<span id="answer">Ответ</span>
+</div>
+
+<style>
+#main{
+width:370px;
+height:300px;
+position:relative;
+background:rgb(229, 229, 212);
+}
+#box1,#box2,#box3{
+width:50px;
+position:absolute;
+margin-left:30px;
+}
+.Compilate{
+margin-left:130px;
+position:absolute;
+}
+#box1{
+margin-left:13px;
+}
+#letter1, #letter2, #letter3{
+padding:10px;
+margin-top:10px;
+}
+#answer{
+position:absolute;
+margin-left:150px;
+margin-top:40px;
+}
+</style>
+<script>
+function trap(){
+var a,b,h,S;
+a=parsetInt(document.getElementById("box1").value;
+b=parsetInt(document.getElementById("box2").value;
+h=parsetInt(document.getElementById("box3").value;
+S=1/2*h*(a+b);
+document.getElementById("answer").innerHTML=string(S);
+}
+</script>
+
+
+</body>
+</html>
