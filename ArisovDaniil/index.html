@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <style>
+        .td {
+            width: 60px;
+            height: 60px;
+            font-size: 36px;
+            text-align: center;
+            position: absolute;
+        }
+        #area {
+            position: relative;
+            height: 140px;
+            background-color: yellow;
+        }
+
+        #answer {
+            font-size: 36px;
+            color: violet;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="area">
+
+    <input type="text" class="td" placeholder="A" id="td11" style="top:0px; left:0px;">
+    <input type="text" class="td" placeholder="B" id="td12" style="top:0px; left:70px;">
+    <input type="text" class="td" placeholder="C" id="td21" style="top:0px; left:140px;">
+
+
+    <input type="button"
+           value="Вычислить" onclick="det()" style="position: absolute; top:70px; left: 0px; width: 120px; height: 30px;">
+    <span style="position: absolute; top:100px; left:0px;" id = "answer"> "Ответ"  </span>
+
+</div>
+</body>
+</html>
+
+<script>
+    function det() {
+        var a11, a12, a21, opr;
+        a11 = parseInt( document.getElementById("td11").value );
+        a12 = parseInt( document.getElementById("td12").value );
+        a21 = parseInt( document.getElementById("td21").value );
+
+        opr = a11 * a12 * a21;
+        document.getElementById("answer").innerHTML =
+                String( opr );
+
+
+    }
+
+</script>
