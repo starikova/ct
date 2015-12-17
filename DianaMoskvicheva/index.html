@@ -1,0 +1,108 @@
+
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+
+</body>
+</html>
+
+<script>
+
+var area = document.createElement('div');
+document.body.appendChild( area );
+area.style.height = "400px";
+area.style.backgroundColor = "yellow";
+area.style.position = "relative";
+area.id = "area";
+
+
+var td11 = document.createElement('input');
+area.appendChild( td11 );
+td11.style.position = "absolute";
+td11.style.left = "0px";
+td11.style.top = "0px";
+td11.style.width = "80px";
+td11.style.height = "60px";
+td11.style.fontSize = "36px";
+td11.value = "0";
+td11.textAlign = "center";
+td11.textJustify = "center";
+td11.id = "td11";
+
+var td12 = td11.cloneNode(false);
+area.appendChild( td12 );
+td12.style.top = "70px";
+td12.id = "td12";
+
+var td21 = td11.cloneNode(false);
+area.appendChild( td21 );
+
+td21.style.top = "140px";
+td21.id = "td21";
+
+var td22 = td11.cloneNode(false);
+area.appendChild( td22 );
+
+td22.style.top = "210px";
+td22.id = "td22";
+
+var button = td11.cloneNode(false);
+area.appendChild( button );
+button.type = "button";
+button.value = "Вычислить";
+button.style.left = "0px";
+button.style.top = "280px";
+button.style.width = "210px";
+//button.onclick = det;
+
+//button.onclick = function() {
+		//alert("Светит солнце!")
+   //};
+
+ //  Можно использовать любые события для обработчика
+ //  с помощью addEventListener (без on маленькими буквами):
+button.addEventListener( "click", det );
+   
+var span = document.createElement('span');
+area.appendChild( span );
+span.style.position = "absolute";
+span.style.left = "50px";
+span.style.top = "340px";
+span.style.width = "60px";
+span.style.height = "60px";
+span.style.fontSize = "36px";
+span.innerHTML = "Ответ";
+span.id = "answer";
+
+ // ИЛИ
+area.getElementsByTagName("input")[0].value = "6,67";
+
+
+area.getElementsByTagName("input")[1].value = "0";
+area.getElementsByTagName("input")[2].value = "0";
+area.getElementsByTagName("input")[3].value = "0";
+
+area.getElementsByTagName("input")[4].value = "Вычислить";
+
+function det() {
+var a11, a12, a21, a22, opr;
+a11 = parseInt( document.getElementById("td11").value );
+a12 = parseInt( document.getElementById("td12").value );
+a21 = parseInt( document.getElementById("td21").value );
+a22 = parseInt( document.getElementById("td22").value );
+
+opr = a11 *(a12 * a21) / (a22*a22);
+//alert( opr );
+document.getElementById("answer").innerHTML = 
+String( opr );
+
+
+}
+
+</script>
+
+
+
+
