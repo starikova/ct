@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<h2> Введите стороны треугольника</h2>
+<style>
+.td {
+width: 60px;
+height: 60px;
+font-size: 36px;
+text-align: center;
+position: absolute;
+}
+#area {
+position: relative;
+height: 260px;
+background-color: blue;
+}
+
+#answer {
+font-size: 36px;
+color: red;
+}
+</style>
+</head>
+
+<body>
+
+<div id="area">
+
+<input type="text" class="td" value="0" id="td11" style="top:0px; left:0px;">
+<input type="text" class="td" value="0" id="td12"style="top:0px; left:70px;">
+<input type="text" class="td" value="0" id="td13"style="top:0px; left:140px;">
+
+
+<input type="button" 
+          value="Найти площадь" onclick="det()" style="position: absolute; top:140px; left: 0px; width: 120px; height: 30px;">
+<span style="position: absolute; top:180px; left:20px;" id = "answer"> Ответ </span>	
+
+</div>
+</body>
+</html>
+
+<script>
+function det() {
+var a, b, c, p, opr;
+a = parseInt( document.getElementById("td11").value );
+b = parseInt( document.getElementById("td12").value );
+c = parseInt( document.getElementById("td13").value );
+
+if (a<0 || b<0 || c<0 ) {
+  alert( 'Треугольник не существут' );
+} else
+p = 0.5*(a+b+c);
+opr = Math.sqrt(p*(p-a)*(p-b)*(p-c));
+if (opr==0) { alert( 'Треугольник не существут' );}
+//alert( opr );
+document.getElementById("answer").innerHTML = 
+String( opr );
+
+
+
+}
+
+</script>
+
+
+
+
